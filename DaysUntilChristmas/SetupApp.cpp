@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include "UserPrompt.cpp";
+#include <string>
 #include "Math.hpp"
 
 static std::string strUpper(std::string value) {
@@ -25,6 +26,8 @@ T inputByUser(T textUpper) {
 
 template<typename UserQuestion>
 auto text(std::string text) -> decltype(text);
+
+
 
 int main() {
 
@@ -51,8 +54,11 @@ int main() {
 		double calcMonths = m.getAddNumbers(christmasMonth, currentMonth);
 		double calcDays = m.getAddNumbers(inputDays, currentDay);
 
-		std::cout << inputByUser(strUpper("You Will Have")) << calcMonths << " Months Until Chstimas" << "\n";
-		std::cout << inputByUser(strUpper("You Will Have")) << calcDays << " Days Until Chstimas" << "\n";
+		std::string messageDays = std::to_string(calcDays);
+		std::string messageMonths = std::to_string(calcMonths);
+			
+		std::cout << inputByUser(strUpper("You Will Have")) << messageMonths << " Months Until Chstimas" << "\n";
+		std::cout << inputByUser(strUpper("You Will Have")) << messageDays << " Days Until Chstimas" << "\n";
 
 	}
 
@@ -62,28 +68,41 @@ int main() {
 		double calcMonths = m.getSubNumbers(christmasMonth, currentMonth);
 		double calcDays = m.getSubNumbers(inputDays, currentDay);
 
-		std::cout << inputByUser(strUpper("You Will Have")) << calcMonths << " Months Until Chstimas" << "\n";
-		std::cout << inputByUser(strUpper("You Will Have")) << calcDays << " Days Until Chstimas" << "\n";
+		std::string messageDays = std::to_string(calcDays);
+		std::string messageMonths = std::to_string(calcMonths);
+
+		std::cout << inputByUser(strUpper("You Will Have")) << messageMonths << " Months Until Chstimas" << "\n";
+		std::cout << inputByUser(strUpper("You Will Have")) << messageDays << " Days Until Chstimas" << "\n";
+
 	}
 
 	if (inputOption == "MUL") {
 
 		Maths<double, int> m{};
-		double calcMonths = m.getMulNumbers(christmasMonth, currentMonth);
-		double calcDays = m.getMulNumbers(inputDays, currentDay);
 
-		std::cout << inputByUser(strUpper("You Will Have")) << calcMonths << " Months Until Chstimas" << "\n";
-		std::cout << inputByUser(strUpper("You Will Have")) << calcDays << " Days Until Chstimas" << "\n";
+		double calcMonths = m.getSubNumbers(christmasMonth, currentMonth);
+		double calcDays = m.getSubNumbers(inputDays, currentDay);
+
+		std::string messageDays = std::to_string(calcDays);
+		std::string messageMonths = std::to_string(calcMonths);
+
+		std::cout << inputByUser(strUpper("You Will Have")) << messageMonths << " Months Until Chstimas" << "\n";
+		std::cout << inputByUser(strUpper("You Will Have")) << messageDays << " Days Until Chstimas" << "\n";
 	}
+
 
 	if (inputOption == "DIV") {
 
 		Maths<double, int> m{};
-		double calcMonths = m.getDivNumbers(christmasMonth, currentMonth);
-		double calcDays = m.getDivNumbers(inputDays, currentDay);
 
-		std::cout << inputByUser(strUpper("You Will Have")) << calcMonths << " Months Until Chstimas" << "\n";
-		std::cout << inputByUser(strUpper("You Will Have")) << calcDays << " Days Until Chstimas" << "\n";
+		double calcMonths = m.getSubNumbers(christmasMonth, currentMonth);
+		double calcDays = m.getSubNumbers(inputDays, currentDay);
+
+		std::string messageDays = std::to_string(calcDays);
+		std::string messageMonths = std::to_string(calcMonths);
+
+		std::cout << inputByUser(strUpper("You Will Have")) << messageMonths << " Months Until Chstimas" << "\n";
+		std::cout << inputByUser(strUpper("You Will Have")) << messageDays << " Days Until Chstimas" << "\n";
 	}
 
 }
