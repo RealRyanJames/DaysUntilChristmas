@@ -38,13 +38,12 @@ public:
 			if (number_2 == 0) {
 				
 				std::cout << PrintMessageToConsole("Divide by Zero");
-				break;
 
 			}
 
 		}
-		catch (runtime_error& e) {
-			
+		catch (int err) {
+			std::cout << err << std::endl;
 		}
 		
 		return number_1 / number_2;
